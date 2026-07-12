@@ -736,6 +736,7 @@ section{ padding: 84px 0; }
   background-image: var(--ajrak-tile);
   background-size: 60px 22px;
   opacity: 0.14;
+   display:none;
 }
 .gtile::after{
   content: "";
