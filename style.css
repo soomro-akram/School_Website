@@ -929,6 +929,23 @@ footer{
 .reveal.in{ opacity: 1; transform: translateY(0); }
 
 
+/* School Logo */
+
+.school-logo{
+    width:65px;
+    height:65px;
+    object-fit:cover;
+    border-radius:50%;
+    background:#fff;
+    padding:4px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:all .3s ease;
+}
+
+.school-logo:hover{
+    transform:scale(1.08) rotate(5deg);
+    box-shadow:0 15px 35px rgba(0,114,255,.35);
+}
 
 /*==============================
     PREMIUM BUTTON STYLE
