@@ -1,3 +1,5 @@
+const scriptURL="https://script.google.com/macros/s/AKfycbwhTegjIWij19AH6u64jN783X614WZX0BBa7iuDq70lzF0RgqEHxI_aUSpTLpRo61TD/exec";
+
 document.querySelector("form").addEventListener("submit",function(e){
 
 e.preventDefault();
