@@ -745,7 +745,12 @@ section{ padding: 84px 0; }
 .gtile span{ position: relative; z-index: 1; }
 .gtile.g2{ background: linear-gradient(160deg, #BC2E42, var(--maroon-deep)); }
 .gtile.g3{ background: linear-gradient(160deg, #E0A644, var(--ochre)); }
-.gtile.g4{ background: linear-gradient(160deg, var(--indigo-deep), #050e1c); }
+.gtile.g4{
+    background-image: url("assembly.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
 
 /* ==========================================================================
    Admissions
