@@ -2,10 +2,31 @@ document.querySelector("form").addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    localStorage.setItem("loggedIn", "true");
+    let username = document.querySelector('input[type="text"]').value;
+    let password = document.querySelector('input[type="password"]').value;
 
-    alert("Login Successful!");
+    let user = JSON.parse(localStorage.getItem("user"));
 
-    window.location.href = "index.html";
+    if(user==null){
+
+        alert("Please Signup First");
+
+        return;
+
+    }
+
+    if(username===user.username && password===user.password){
+
+        localStorage.setItem("loggedIn","true");
+
+        window.location.href="index.html";
+
+    }
+
+    else{
+
+        alert("Invalid Username or Password");
+
+    }
 
 });
