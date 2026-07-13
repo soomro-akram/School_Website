@@ -1,21 +1,27 @@
-document.querySelector("form").addEventListener("submit",function(e){
+document.querySelector("form").addEventListener("submit", function(e){
 
-e.preventDefault();
+    e.preventDefault();
 
-let password=document.getElementById("password").value;
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
 
-let confirm=document.getElementById("confirm").value;
+    if(password !== confirm){
+        alert("Passwords do not match!");
+        return;
+    }
 
-if(password!=confirm){
+    const user = {
+        username: username,
+        email: email,
+        password: password
+    };
 
-alert("Passwords do not match!");
+    localStorage.setItem("user", JSON.stringify(user));
 
-return;
+    alert("Signup Successful!");
 
-}
-
-alert("Signup Successful!");
-
-window.location="login.html";
+    window.location.href = "login.html";
 
 });
