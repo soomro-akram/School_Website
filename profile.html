@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Profile</title>
+
+<link rel="stylesheet" href="signup.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="signup-box">
+
+<h2>Student Profile</h2>
+
+<p><b>Name:</b> <span id="name"></span></p>
+
+<p><b>Email:</b> <span id="email"></span></p>
+
+<button onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let user=JSON.parse(localStorage.getItem("user"));
+
+document.getElementById("name").innerHTML=user.username;
+
+document.getElementById("email").innerHTML=user.email;
+
+function logout(){
+
+localStorage.removeItem("loggedIn");
+
+window.location="index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
