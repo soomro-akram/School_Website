@@ -1,43 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>Profile</title>
+<meta charset="UTF-8">
 
-<link rel="stylesheet" href="signup.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Profile</title>
+
+<link rel="stylesheet" href="profile.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="profile-container">
 
-<div class="signup-box">
+    <div class="profile-card">
 
-<h2>Student Profile</h2>
+        <img src="student.png" id="profileImage" class="profile-img">
 
-<p><b>Name:</b> <span id="name"></span></p>
+        <h2 id="studentName"></h2>
 
-<p><b>Email:</b> <span id="email"></span></p>
+        <p class="student-id">Student Dashboard</p>
 
-<button onclick="logout()">
+        <div class="info">
 
-Logout
+            <div class="row">
+                <span>👤 Username</span>
+                <strong id="username"></strong>
+            </div>
 
-</button>
+            <div class="row">
+                <span>📧 Email</span>
+                <strong id="email"></strong>
+            </div>
 
-</div>
+            <div class="row">
+                <span>🎓 Class</span>
+                <strong>10th</strong>
+            </div>
+
+            <div class="row">
+                <span>🆔 Roll No</span>
+                <strong>2026001</strong>
+            </div>
+
+            <div class="row">
+                <span>📱 Phone</span>
+                <strong>0300-1234567</strong>
+            </div>
+
+            <div class="row">
+                <span>📍 Address</span>
+                <strong>Padidan, Sindh</strong>
+            </div>
+
+            <div class="row">
+                <span>📄 Admission</span>
+                <strong style="color:green;">Approved</strong>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="window.location='student-dashboard.html'">
+                Dashboard
+            </button>
+
+            <button onclick="logout()" class="logout">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
 <script>
 
-let user=JSON.parse(localStorage.getItem("user"));
+let user = JSON.parse(localStorage.getItem("user"));
 
-document.getElementById("name").innerHTML=user.username;
+if(user){
+
+document.getElementById("studentName").innerHTML=user.username;
+
+document.getElementById("username").innerHTML=user.username;
 
 document.getElementById("email").innerHTML=user.email;
+
+}else{
+
+window.location="login.html";
+
+}
 
 function logout(){
 
