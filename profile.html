@@ -19,7 +19,9 @@
 
     <div class="profile-card">
 
-        <img src="student.png" id="profileImage" class="profile-img">
+       <img src="student.png" id="profileImage" class="profile-img">
+
+        <input type="file" id="imageInput" accept="image/*">
 
         <h2 id="studentName"></h2>
 
@@ -37,37 +39,29 @@
                 <strong id="email"></strong>
             </div>
 
-            <div class="row">
-                <span>🎓 Class</span>
-                <strong>10th</strong>
-            </div>
+         <div class="row">
+    <span>🎓 Class</span>
+    <input type="text" id="studentClass" placeholder="Enter Class">
+</div>
 
-            <div class="row">
-                <span>🆔 Roll No</span>
-                <strong>2026001</strong>
-            </div>
+<div class="row">
+    <span>🆔 Roll No</span>
+    <input type="text" id="rollNo" placeholder="Enter Roll No">
+</div>
 
-            <div class="row">
-                <span>📱 Phone</span>
-                <strong>0300-1234567</strong>
-            </div>
+<div class="row">
+    <span>📱 Phone</span>
+    <input type="text" id="phone" placeholder="Enter Phone Number">
+</div>
 
-            <div class="row">
-                <span>📍 Address</span>
-                <strong>Padidan, Sindh</strong>
-            </div>
-
-            <div class="row">
-                <span>📄 Admission</span>
-                <strong style="color:green;">Approved</strong>
-            </div>
-
+<div class="row">
+    <span>📍 Address</span>
+    <input type="text" id="address" placeholder="Enter Address">
+</div>
         </div>
-
         <div class="buttons">
-
-            <button onclick="window.location='student-dashboard.html'">
-                Dashboard
+            <button onclick="saveProfile()">
+                Save Profile
             </button>
 
             <button onclick="logout()" class="logout">
