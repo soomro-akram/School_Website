@@ -80,18 +80,60 @@ let user = JSON.parse(localStorage.getItem("user"));
 
 if(user){
 
-document.getElementById("studentName").innerHTML=user.username;
+document.getElementById("studentName").innerHTML = user.username;
+document.getElementById("username").innerHTML = user.username;
+document.getElementById("email").innerHTML = user.email;
 
-document.getElementById("username").innerHTML=user.username;
+document.getElementById("studentClass").value = user.class || "";
+document.getElementById("rollNo").value = user.rollNo || "";
+document.getElementById("phone").value = user.phone || "";
+document.getElementById("address").value = user.address || "";
 
-document.getElementById("email").innerHTML=user.email;
+if(user.image){
+document.getElementById("profileImage").src = user.image;
+}
 
 }else{
-
 window.location="login.html";
+}
+
+document.getElementById("imageInput").addEventListener("change",function(){
+
+let file=this.files[0];
+
+if(file){
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+document.getElementById("profileImage").src=e.target.result;
+
+user.image=e.target.result;
+
+localStorage.setItem("user",JSON.stringify(user));
 
 }
 
+reader.readAsDataURL(file);
+
+}
+
+});
+
+function saveProfile(){
+
+user.class=document.getElementById("studentClass").value;
+user.rollNo=document.getElementById("rollNo").value;
+user.phone=document.getElementById("phone").value;
+user.address=document.getElementById("address").value;
+
+localStorage.setItem("user",JSON.stringify(user));
+
+alert("Profile Saved Successfully!");
+
+}
+    
 function logout(){
 
 localStorage.removeItem("loggedIn");
