@@ -111,3 +111,33 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
 });
+
+window.onload = function () {
+
+    let loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn === "true") {
+
+        document.getElementById("loginMenu").style.display = "none";
+
+        document.getElementById("admissionMenu").style.display = "block";
+
+        document.getElementById("profileMenu").style.display = "block";
+
+        document.getElementById("logoutMenu").style.display = "block";
+
+        document.getElementById("admissions").style.display = "block";
+
+        document.getElementById("heroAdmissionBtn").style.display = "inline-flex";
+
+    }
+
+}
+
+function logout(){
+
+    localStorage.removeItem("loggedIn");
+
+    location.reload();
+
+}
